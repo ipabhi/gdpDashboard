@@ -14,12 +14,15 @@ const GdpChart = ({ gdpData }) => {
   const year = gdpData.India.map((data) => data.year).reverse();
   // console.log('Years for x-axis:', years);
   const indiaData = gdpData.India.map((data) =>
+    // Limit to 2 decimal places
     parseFloat(data.value.toFixed(2))
-  ); // Limit to 2 decimal places
+  ).reverse();
   const chinaData = gdpData.China.map((data) =>
     parseFloat(data.value.toFixed(2))
-  ); // Limit to 2 decimal places
-  const usaData = gdpData.USA.map((data) => parseFloat(data.value.toFixed(2))); // Limit to 2 decimal places
+  ).reverse();
+  const usaData = gdpData.USA.map((data) =>
+    parseFloat(data.value.toFixed(2))
+  ).reverse();
 
   // Highcharts options
   const options = {
@@ -27,10 +30,10 @@ const GdpChart = ({ gdpData }) => {
       type: 'area',
     },
     title: {
-      text: 'GDP Growth Percentage (2013 - 2023)',
+      text: '',
     },
     xAxis: {
-      categories: year, // Display actual years
+      categories: year, // Display year value
       title: {
         text: 'Year',
       },

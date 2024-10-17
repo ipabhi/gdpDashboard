@@ -29,7 +29,6 @@ export async function getServerSideProps() {
       }
       acc[country].push({ year, value });
       return acc;
-      console.log(acc);
     }, {});
 
     return {
@@ -58,10 +57,28 @@ export default function Home({ gdpData, error }) {
   }
 
   return (
-    <div>
-      <h1>World Bank GDP Growth Data (2013 - 2023)</h1>
-      <GdpChart gdpData={gdpData} />
-      <GdpTable gdpData={gdpData} />
+    <div className='container-fluid'>
+      <h1 className='display-6 text-center m-2'>
+        World Bank GDP Growth Data (2013 - 2023)
+      </h1>
+      <div className='container' style={{ width: '50%' }}>
+        <div className='shadow-sm p-2 bg-body-tertiary rounded'>
+          <p className='text-body-secondary lh-base'>
+            Utilizing the World Bank API, A demo showing a stacked area chart
+            and also a tabular presentation of GDP percentage values for China,
+            India, and the USA from 2013 to 2023. This visualization emphasizes
+            the economic shifts during the COVID-19 pandemic.
+          </p>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col-sm-12 pt-2 col-md-6 pt-sm-4'>
+          <GdpChart gdpData={gdpData} />
+        </div>
+        <div className='col-sm-12 pt-2 col-md-6 pt-sm-4'>
+          <GdpTable gdpData={gdpData} />
+        </div>
+      </div>
     </div>
   );
 }

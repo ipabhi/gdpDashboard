@@ -8,11 +8,18 @@ const GdpTable = ({ gdpData }) => {
 
   // Prepare column header for AG Grid table
   const columnDefs = [
-    { headerName: 'Country', field: 'country', sortable: true },
-    { headerName: 'Year', field: 'year', sortable: true },
+    { headerName: 'Country', field: 'country', flex: 2, sortable: true },
+    {
+      headerName: 'Year',
+      field: 'year',
+      flex: 2,
+      sortable: true,
+      sort: 'desc',
+    },
     {
       headerName: 'GDP Growth (%)',
       field: 'value',
+      flex: 2,
       sortable: true,
       width: 150,
       valueFormatter: (params) => `${params.value.toFixed(2)}%`,
@@ -38,17 +45,15 @@ const GdpTable = ({ gdpData }) => {
     <div
       className='ag-theme-alpine'
       style={{
-        height: 'auto',
-        width: '75%',
-        margin: '20px auto',
+        height: 500,
       }}
     >
       <AgGridReact
         columnDefs={columnDefs}
         rowData={rowData}
         pagination={true}
-        paginationPageSize={20}
-        domLayout='autoHeight'
+        paginationPageSize={10}
+        paginationPageSizeSelector={[10, 25]}
       />
     </div>
   );
