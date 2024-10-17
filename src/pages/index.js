@@ -58,7 +58,7 @@ export default function Home({ gdpData, error }) {
   }
 
   return (
-    <div className='container'>
+    <div>
       <h1>World Bank GDP Growth Data (2013 - 2023)</h1>
       <GdpChart gdpData={gdpData} />
       <GdpTable gdpData={gdpData} />
