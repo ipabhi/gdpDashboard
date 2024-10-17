@@ -29,9 +29,6 @@ const GdpChart = ({ gdpData }) => {
     chart: {
       type: 'area',
     },
-    title: {
-      text: '',
-    },
     xAxis: {
       categories: year, // Display year value
       title: {
