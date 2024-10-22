@@ -21,6 +21,7 @@ const GdpTable = ({gdpData}) => {
 			field: 'value',
 			flex: 2,
 			sortable: true,
+			sort: 'desc',
 			width: 150,
 			valueFormatter: (params) => `${params.value.toFixed(2)}%`,
 		},
