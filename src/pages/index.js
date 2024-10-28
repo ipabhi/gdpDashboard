@@ -1,4 +1,3 @@
-import React from 'react';
 import GdpChart from './Components/GdpChart';
 import GdpTable from './Components/GdpTable';
 
