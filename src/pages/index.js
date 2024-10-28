@@ -15,7 +15,10 @@ export async function getServerSideProps() {
     const data = await res.json();
 
     // Get the data
-    const gdpData = data[1].reduce((acc, item) => {
+    const gdpData = {};
+
+    for (let i = 0; i < data[1].length; i++) {
+      const item = data[1][i];
       let country = item.country.value;
       const year = item.date;
       const value = item.value;
@@ -24,12 +27,13 @@ export async function getServerSideProps() {
         country = 'USA';
       }
 
-      if (!acc[country]) {
-        acc[country] = [];
+      // Initialize country array if it doesn't exist
+      if (!gdpData[country]) {
+        gdpData[country] = [];
       }
-      acc[country].push({ year, value });
-      return acc;
-    }, {});
+
+      gdpData[country].push({ year, value });
+    }
 
     return {
       props: {
