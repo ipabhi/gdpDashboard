@@ -18,6 +18,7 @@ const GdpChart = ({gdpData}) => {
 	).reverse();
 	const chinaData = gdpData.China.map((data) => parseFloat(data.value.toFixed(2))).reverse();
 	const usaData = gdpData.USA.map((data) => parseFloat(data.value.toFixed(2))).reverse();
+	const brasilData = gdpData.Brazil.map((data) => parseFloat(data.value.toFixed(2))).reverse();
 
 	// Highcharts options
 	const options = {
@@ -51,6 +52,10 @@ const GdpChart = ({gdpData}) => {
 			{
 				name: 'USA',
 				data: usaData,
+			},
+			{
+				name: 'Brazil',
+				data: brasilData,
 			},
 		],
 		plotOptions: {
