@@ -66,8 +66,8 @@ export default function Home({gdpData, error}) {
 				<div className='shadow-sm p-2 bg-body-tertiary rounded'>
 					<p className='text-body-secondary lh-base'>
 						Utilizing the World Bank API, below demo showing a stacked area chart and also a tabular
-						presentation of GDP percentage values for China, India, and the USA from 2013 to 2023.
-						This visualization emphasizes the economic shifts during the COVID-19 pandemic.
+						presentation of GDP percentage values for Brazil, China, India, and the USA from 2013 to
+						2023. This visualization emphasizes the economic shifts during the COVID-19 pandemic.
 					</p>
 				</div>
 			</div>
