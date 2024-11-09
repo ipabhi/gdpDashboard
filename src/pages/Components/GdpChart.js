@@ -23,7 +23,7 @@ const GdpChart = ({gdpData}) => {
 	// Highcharts options
 	const options = {
 		chart: {
-			type: 'area',
+			type: 'column',
 		},
 		title: {
 			text: '',
@@ -58,14 +58,19 @@ const GdpChart = ({gdpData}) => {
 				data: brasilData,
 			},
 		],
+		// plotOptions: {
+		// 	area: {
+		// 		marker: {
+		// 			enabled: false,
+		// 		},
+		// 		dataLabels: {
+		// 			enabled: false,
+		// 		},
+		// 	},
+		// },
 		plotOptions: {
-			area: {
-				marker: {
-					enabled: false,
-				},
-				dataLabels: {
-					enabled: false,
-				},
+			series: {
+				pointWidth: 20,
 			},
 		},
 	};
